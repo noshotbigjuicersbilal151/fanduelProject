@@ -8,24 +8,11 @@
  
 
  
- > ## Expectations
- > * Incorporate **at least one** design pattern
- >   * It is recommended that you include a design pattern that we will teach this session (Composite, Strategy, or Visitor)
- > * Your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * Each member of the group must actively participate in the Github Project board and reviewing commited code.
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two scrum/check-in meetings with your lab TA/reader in two different weeks in addition to the final demo.
+
 
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project? What are the features that the project provides?
- > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+
 
 On websites like FanDuel.com and DraftKings.com, one can play "daily fantasy sports" which differ from typical fantasy sports in that your team is only your team for one day. In regular fantasy basketball, when you draft your team at the start of the year, you're stuck with pretty much the same team throughout the year whether they're good, bad, healthy, or unhealthy. In daily fantasy basketball, if one of your players gets a season-ending injury, you will be down for a night but can just simply choose to avoid picking that player the next time you play.
 
