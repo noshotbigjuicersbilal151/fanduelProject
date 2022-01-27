@@ -4,10 +4,8 @@
 # Daily Fantasy Best Possible Lineup
  > 
  
-  Authors: [Jordan Kuschner](https://github.com/marinersjk00),  [Chris Chua](https://github.com/cchua00),  [Andrew Ocegueda](https://github.com/xTh3Unkn0wnx) 
-  
+  Authors: [Jordan Kuschner](https://github.com/marinersjk00),  [Chris Chua](https://github.com/cchua00)  
  
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least one design pattern iteratively, which you will have to justify in later phases.The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly encourage you to practice them.
 
  
  > ## Expectations
@@ -28,8 +26,13 @@
  > * What will be the input/output of your project? What are the features that the project provides?
  > 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
+
+On websites like FanDuel.com and DraftKings.com, one can play "daily fantasy sports" which differ from typical fantasy sports in that your team is only your team for one day. In regular fantasy basketball, when you draft your team at the start of the year, you're stuck with pretty much the same team throughout the year whether they're good, bad, healthy, or unhealthy. In daily fantasy basketball, if one of your players gets a season-ending injury, you will be down for a night but can just simply choose to avoid picking that player the next time you play.
+
+The goal of daily fantasy is to draft the best possible lineup for that day's slate of games. The most surefire way to do this, although there is no surefire way since we cannot predict the future, would be to draft all the top players. However, this is not possible because there is an implemented salary cap. The star players who typically have great games every night are far more expensive than the secondary players who average much lower statistics. But, on any given night, any player can have a great game regardless of how consistently good they've been in the past. Thus, the goal of daily fantasy is to work within the limitations of the salary cap to find the best possible lineup for that day. This will almost always be a mix of a couple big stars and more secondary players that one might personally think will do well that night.
+
+Now, again, we cannot accurately predict the future. That said, we can use past data to help us in our attempts to accurately predict the future. The goal of our program is to be able to return the best possible lineup from a given past day knowing all the stats of all the possible players now exist and are unchangeable. The user should be able to enter a day in the past that basketball games occurred, and from that the program should return at least the best possible lineup, if not the top 2 or 3 best possible lineups. The user can then use this information to try and find more under the radar players that seem to consistently do well when he/she is creating his future lineups. We plan to do as much as possible in C++, although SQL and possibly JDBC may be necessary to organize data.
+
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to:
  > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
