@@ -7,6 +7,7 @@
 #include "Player.h"
 
 class Team {
+int salaryCap;
 vector<Player*> teamPlayers;
 std::string teamName;
 public:
