@@ -36,20 +36,8 @@ Now, again, we cannot accurately predict the future. That said, we can use past 
  The overarching class is the Team class which will hold the total team salary, the total team points, and the date to retrieve a team from. Player will inherit from team, with each player having it's individual statistics and cost to the team salary. Each player has a specific position. The position doesn't matter much except that certain players can only fill out certain positions and there has to be 2 players of each position, except Center which only needs 1.
  
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+
+We are using a composite pattern for implementing out Team, Player, and position classes. This is because our inheritance is relatively simple. All of our subclasses are really just smaller instances of their parents. For example, Team is a collection of Players, and every position player is still a player on a team. We don't have many complicated strategies or decisions involved in this portion so we are ok with using a composite design pattern. For our comparison between players, however, we may need to use a strategy pattern instead. As we get into comparing players to see who goes on our best teams, we could run into a multitue of iffy situations such as comparing maximum points vs points per dollar, or considering a tie in points or if a more valueable position is filled. We will also need to consider additonal factors like if our team isfull at a certain position or if a more valueable player exists that we cannot afford. Overall, there are many complications that could occur as a result of comparing between players, so a strategy pattern would be best. The comparisons haven't been implemented yet, but following the composite design pattern has allowed us to stay focued on the specific tasks we are working on. It is easy to think of new ideas while writing the code, but following the design pattern has forced us to keep things simple for this portion and save the more advanced stuff for the strategy side.
 
  
  > ## Final deliverable
