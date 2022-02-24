@@ -22,6 +22,9 @@ for (int i = 0; i < playerName.size(); i++){
   if (teamPlayers[i]->name = playerName;) teamPlayers.erase(teamPlayer.begin()+i);
 }
 }
+vector getVector () {
+  return teamPlayers;
+}
 };
 
 #endif __TEAM_HPP__
