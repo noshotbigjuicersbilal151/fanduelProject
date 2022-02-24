@@ -25,6 +25,9 @@ for (int i = 0; i < playerName.size(); i++){
 vector getVector () {
   return teamPlayers;
 }
+bool team_check(teamPlayers); 
+bool team_count(teamPlayers); 
+
 };
 
 #endif __TEAM_HPP__
