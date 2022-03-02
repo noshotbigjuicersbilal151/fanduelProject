@@ -1,16 +1,28 @@
 #ifndef __SMALL_FORWARD_HPP__
 #define __SMALL_FORWARD_HPP__
 
-include "Player.h"
+#include "Player.h"
+#include <string>
 
 class SmallForward : public Player {
-    string position;
+    std::string position;
 public:
-    SmallForward(int cost1, int pts1, int ats1, int reb1, int blk1, int stl1, int to1, string name1) : Player(cost1, pts1, ats1, reb1, blk1, stl1, to1, name1) {
+    SmallForward(int icost, int ipts, int iats, int ireb, int iblk, int istl, int ito, std::string iname) {
+        cost = icost;
+        numPoints = ipts;
+        numAssists = iats;
+        numReb = ireb;
+        numBlock = iblk;
+        numSteal = istl;
+        name = std::move(iname);
         position = "Small Forward";
     }
-    void setPosition(std::string pos) override {position = pos;}
-    string getPosition() override {return position;}
+    void setPosition(std::string pos) override {
+        position = pos;
+    }
+    std::string getPosition() override {
+        return position;
+    }
 };
 
 #endif //__SMALL_FORWARD_HPP__
