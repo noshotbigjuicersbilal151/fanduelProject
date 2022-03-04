@@ -6,7 +6,7 @@ class Player{
         int cost;
         double points_scored;
     protected:
-        String name, position;
+        std::string name, position;
         
     Player(int cost, double pts){
         this->cost = cost;

@@ -1,10 +1,13 @@
+#include "Team.h"
+#include <string>
+
 class Player{
     
     private:
         int cost;
         double points_scored;
     protected:
-        String name, position;
+        std::string name, position;
         
     Player(int cost, int pts){
         this->cost = cost;
