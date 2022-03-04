@@ -13,7 +13,17 @@ class Player{
     
     void setCost(int cost){}
     
-    void setPoints(double points){}   
+    void setPoints(double points){}
+    
+    int getCost(){
+        return this->cost;
+    }
+    
+    double getPoints(){
+           return this->points_scored;
+    }
+    
+    double calculateValue() {}
     
 }
 
