@@ -25,21 +25,14 @@ class Player{
         return this->cost;
     }
     
-    double getPts(){
+    double getPoints(){
         return this->points_scored;
     }
     
     
-    float calculatePoints(){
-        float pointsScored = 0.0;
-        pointsScored += this->numPoints;
-        pointsScored += 1.5 * this->numAssists;
-        pointsScored += 1.2 * this->numReb;
-        pointsScored += 3 * (this->numBlock + this->numSteal);
-        pointsScored -= this->numTO;
-        
-        return pointsScored;
-  }
+    double calculateValue(){
+         return  this->points_scored / this->cost;
+    }
     
     
 }
