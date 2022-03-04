@@ -15,13 +15,9 @@ class Player{
     
     void setPoints(double points){}
     
-    int getCost(){
-        return this->cost;
-    }
+    int getCost(){}
     
-    double getPoints(){
-           return this->points_scored;
-    }
+    double getPoints() {}
     
     double calculateValue() {}
     
