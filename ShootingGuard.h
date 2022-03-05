@@ -6,11 +6,12 @@
 
 class ShootingGuard : public Player {
 public:
-    ShootingGuard(std::string name, int cost, double pts ){
-        this->name = name;
-        this->cost = cost;
-        this->points_scored = pts;
-        this->position = "SG";
+	ShootingGuard(){}
+    ShootingGuard(std::string n, int c, double pts ){
+        name = n;
+        cost = c;
+        points_scored = pts;
+        position = "SG";
     }
     
 };
