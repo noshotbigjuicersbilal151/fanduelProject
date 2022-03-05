@@ -1,59 +1,47 @@
+#pragma once
+#include <string>
+
 class Player{
     
-    private:
-        int cost;
-        int numPoints, numAssists, numReb, numBlock, numSteal, numTO;
     protected:
-        String name, position;
-        
-    Player(int cost, int pts, ints ats, int reb, int blk, int stl, int to, String name, String pos){
-        this->cost = cost;
-        this->numPoints = pts;
-        this->numAssists = ats;
-        this->numReb = reb;
-        this->numBlock = blk;
-        this->numSteal = stl;
-        this->name = name;
-        this->position = pos;
+        int cost;
+        double points_scored;
+        std::string name;
+	std::string  position;
+   public:
+    Player(){}
+    
+    void setPoints(double points){
+	this->points_scored = points;
+	}
+    
+    double getPoints(){
+	return this->points_scored; 
     }
+
+	void setCost(int c){
+	cost = c;
+	}
+
+	int getCost(){
+	return this->cost;
+	}
+
+	void setName(std::string n){
+	name = n;
+	}
+
+	std::string getName(){
+	return this->name;
+	}
+
+	std::string getPos(){
+	return this->position;
+	}
+
+    double calculateValue(){
+	return cost / points_scored;
+	}
     
-    void setCost(int cost){}
-    
-    void setPoints(int numPoints){}
-    
-    void setAssists(int numAssists){}
-    
-    void setReb(int numReb){}
-    
-    void setBlocks(int numBlock){}
-    
-    void setSteals(int numSteals){}
-    
-    void setTO(int numTO){}
-    
-    void setName(String name){}
-    
-    void setPosition(String pos){}
-    
-    int getCost(){}
-    
-    int getPts(){}
-    
-    int getAssists(){}
-    
-    int getReb(){}
-    
-    int getBlock(){ }
-    
-    
-    int getTO(){ }
-    
-    String getName(){}
-    
-    String getPosition(){}
-    
-    float calculatePoints(){  }
-    
-    
-}
+};
 
