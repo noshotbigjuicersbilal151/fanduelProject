@@ -6,13 +6,15 @@
 
 class PointGuard : public Player {
 public:
-    PointGuard(std::string name, int cost, double pts ) {
-        this->name = name;
-        this->cost = cost;
-        this->pts = pts;
-        this->position = "PG";
+	PointGuard(){}
+    PointGuard(std::string n, int c, double pts){
+        name = n;
+        cost = c;
+        points_scored = pts;
+        position = "PG";
     }
-    
+
+
 };
 
 #endif //__POINTGUARD_HPP__

@@ -6,10 +6,10 @@
 
 class PowerForward : public Player {
 public:
-    PowerForward(std::string name, int cost, double pts ) {
+    PowerForward(std::string name, int cost, double pts ){
         this->name = name;
         this->cost = cost;
-        this->pts = pts;
+        this->points_scored = pts;
         this->position = "PF";
     }
     

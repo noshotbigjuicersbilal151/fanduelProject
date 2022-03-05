@@ -1,28 +1,47 @@
-#include "Team.h"
+#pragma once
 #include <string>
 
 class Player{
     
-    private:
+    protected:
         int cost;
         double points_scored;
-    protected:
-        std::string name, position;
-        
-    Player(int cost, int pts){
-        this->cost = cost;
-        this->points_scored = pts;
+        std::string name;
+	std::string  position;
+   public:
+    Player(){}
+    
+    void setPoints(double points){
+	this->points_scored = points;
+	}
+    
+    double getPoints(){
+	return this->points_scored; 
     }
+
+	void setCost(int c){
+	cost = c;
+	}
+
+	int getCost(){
+	return this->cost;
+	}
+
+	void setName(std::string n){
+	name = n;
+	}
+
+	std::string getName(){
+	return this->name;
+	}
+
+	std::string getPos(){
+	return this->position;
+	}
+
+    double calculateValue(){
+	return cost / points_scored;
+	}
     
-    void setCost(int cost){}
-    
-    void setPoints(double points){}
-    
-    int getCost(){}
-    
-    double getPoints() {}
-    
-    double calculateValue() {}
-    
-}
+};
 

@@ -6,10 +6,10 @@
 
 class Center : public Player {
 public:
-    Center(std::string name, int cost, double pts ) {
+    Center(std::string name, int cost, double pts ){
         this->name = name;
         this->cost = cost;
-        this->pts = pts;
+        this->points_scored = pts;
         this->position = "C";
     }
     
