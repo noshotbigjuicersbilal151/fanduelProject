@@ -1,7 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import re
-import pandas as pd
 import csv
 
 month = input("Enter month: ")
@@ -21,7 +19,7 @@ list_of_rows = []
 for row in myTable.findAll('tr'):
     list_of_cells = []
     for cell in row.findAll(["td"]):
-        text = '{0: <20}'.format(cell.text)
+        text = cell.text
         if text.find('Jump to') == -1:
             if text.find('Centers') == -1:
                 if text.find('Forwards') == -1:
