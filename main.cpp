@@ -15,7 +15,7 @@ using namespace std;
 vector<vector<string>> csvReader(){
 	string fname = "bestPlayers.csv";
  
-	vector<vector<string>> content;
+	vector<vector<string>> output;
 	vector<string> row;
 	string line, word;
  
@@ -28,15 +28,14 @@ vector<vector<string>> csvReader(){
  
 			stringstream str(line);
  
-			while(getline(str, word, ','))
+			while(getline(str, word, ',')) //separates by using commas as delimiters
 				row.push_back(word);
-			content.push_back(row);
+			output.push_back(row);
 		}
 	}
-	else
-		cout<<"Could not open the file\n";
+	
  
-	return content;
+	return output;
  
 }
 
@@ -46,28 +45,28 @@ vector<Player> sg;
 vector<Player> c;
 vector<Player> pf;
 vector<Player> sf;
-vector<vector<string>> content = csvReader();
+vector<vector<string>> content = csvReader(); //loads player info as strings
 for(int i=2;i<content.size();i++)
 	{	
 			
 			std::string t = content[i][0];
 			
-		if(t[0] == 'P' && t[1] == 'G'){
+		if(t[0] == 'P' && t[1] == 'G'){ //current row is a Point Guard
                         std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
                         std::string firstName = content[i][2];
-                        firstName.erase(firstName.end()-1, firstName.end());
+                        firstName.erase(firstName.end()-1, firstName.end()); //error adjustment from comma delimiter
                         std::string lastName = content[i][1];
                         lastName.erase(0, 1);
                         std::string name = firstName +" " + lastName;
-                        salary.erase(0,2);
+                        salary.erase(0,2); //error asjustment
                         salary.erase(salary.end(), salary.end());
-                        int sal = std::stoi(salary);
-			Player temp = PointGuard(name, sal, std::stod(content[i][3]));
+                        int sal = std::stoi(salary); //converting string salary to int
+			Player temp = PointGuard(name, sal, std::stod(content[i][3])); //creating PointGuard obj
 			if(pg.size() <= 10){ //only need top 10
 			pg.push_back(temp);
 			}
 			
-		}else if(t[0] == 'S' && t[1] == 'G'){
+		}else if(t[0] == 'S' && t[1] == 'G'){ //current row is a Shooting Guard
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
                         std::string firstName = content[i][2];
                         firstName.erase(firstName.end()-1, firstName.end());
@@ -77,11 +76,11 @@ for(int i=2;i<content.size();i++)
                         salary.erase(0,2);
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
-                        Player temp = ShootingGuard(name, sal, std::stod(content[i][3]));
+                        Player temp = ShootingGuard(name, sal, std::stod(content[i][3])); //creating ShootingGuard obj
                         if(sg.size() <= 10){ //only need top 10
                         sg.push_back(temp);
                         }
-                }else if(t[0] == 'P' && t[1] == 'F'){
+                }else if(t[0] == 'P' && t[1] == 'F'){ //current row is a Power Forward
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
                         std::string firstName = content[i][2];
                         firstName.erase(firstName.end()-1, firstName.end());
@@ -91,11 +90,11 @@ for(int i=2;i<content.size();i++)
                         salary.erase(0,2);
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
-                        Player temp = PowerForward(name, sal, std::stod(content[i][3]));
+                        Player temp = PowerForward(name, sal, std::stod(content[i][3])); //creating PowerForward obj
                         if(pf.size() <= 10){ //only need top 10
                         pf.push_back(temp);
                         }
-                }else if(t[0] == 'S' && t[1] == 'F'){
+                }else if(t[0] == 'S' && t[1] == 'F'){ //current Row is a Small Forward
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
                         std::string firstName = content[i][2];
                         firstName.erase(firstName.end()-1, firstName.end());
@@ -105,11 +104,11 @@ for(int i=2;i<content.size();i++)
                         salary.erase(0,2);
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
-                        Player temp = SmallForward(name, sal, std::stod(content[i][3]));
+                        Player temp = SmallForward(name, sal, std::stod(content[i][3])); //creating SmallForward obj
                         if(sf.size() <= 10){ //only need top 10
                         sf.push_back(temp);
                         }
-                }else if(t[0] == 'C'){
+                }else if(t[0] == 'C'){ //current row is a Center
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
                         std::string firstName = content[i][2];
                         firstName.erase(firstName.end()-1, firstName.end());
@@ -119,13 +118,13 @@ for(int i=2;i<content.size();i++)
                         salary.erase(0,2);
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
-                        Player temp = Center(name, sal, std::stod(content[i][3]));
+                        Player temp = Center(name, sal, std::stod(content[i][3])); //creating Center obj
                         if(c.size() <= 10){ //only need top 10
                         c.push_back(temp);
                         }
                 }
 	}
-
+//Combining different positions into one vector
 vector<Player> sorted;
 
 for(int i = 0; i < pg.size(); i++){
@@ -148,7 +147,7 @@ for(int i = 0; i < c.size(); i++){
         sorted.push_back(c[i]);
 }
 
-
+//sorting first by value (points * 1000 / cost)
 for(int i = 0; i < sorted.size(); i++){
         for(int k = 0; k < sorted.size(); k++){
                 if(i != k){
@@ -174,7 +173,7 @@ int sf_index = 6;
 int c_index = 8;
 
 int salaryCap = 60000;
-
+//figuring out best lineup first based on value
 for(int i = 0; i < sorted.size(); i++){
 	
 	
@@ -217,7 +216,7 @@ for(int i = 0; i < sorted.size(); i++){
 	}
 
 }
-
+//sorting by Points scored
 for(int i = 0; i < sorted.size(); i++){
         for(int k = 0; k < sorted.size(); k++){
                 if(i != k){
@@ -227,13 +226,13 @@ for(int i = 0; i < sorted.size(); i++){
                 }
         }
 }
-
+//using leftover salaryCap to get players that were less valueable but scored more overall points
 for(int i =0; i < sorted.size(); i++){
 	Player temp = sorted[i];
 	
 	for(int k = 0; k < bestLineup.size(); k++){
 		
-		if(temp.getPoints() > bestLineup[k].getPoints() && (salaryCap - (temp.getCost() - bestLineup[k].getCost()) >= 0)){
+		if(temp.getPoints() > bestLineup[k].getPoints() && (salaryCap - (temp.getCost() - bestLineup[k].getCost()) >= 0) && temp.getPosVal() == bestLineup[k].getPosVal()){
 		int salDiff = temp.getCost() - bestLineup[k].getCost();
 		bestLineup[k] = temp;
 		salaryCap -= salDiff;
@@ -243,7 +242,7 @@ for(int i =0; i < sorted.size(); i++){
 
 }
 }
-
+//outputting team and tracking team points and team salary
 double totalPoints = 0.0;
 int teamSalary = 0;
 for(int i =0; i < bestLineup.size(); i++){
