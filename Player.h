@@ -9,6 +9,7 @@ class Player{
         std::string name;
 	std::string  position;
 	double value;
+	int posVal;
    public:
     Player(){}
     
@@ -43,6 +44,10 @@ class Player{
     double calculateValue(){
 	value = (points_scored * 1000) / cost;
 	return value;
+	}
+
+	int getPosVal(){
+	return this->posVal;
 	}
     
 };

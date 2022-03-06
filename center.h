@@ -1,5 +1,4 @@
-#ifndef __CENTER_HPP__
-#define __CENTER_HPP__
+#pragma once
 
 #include "Player.h"
 #include <string>
@@ -12,9 +11,10 @@ public:
         cost = c;
         points_scored = pts;
         position = "C";
+	posVal = 5;
     }
     
 };
 
-#endif //__CENTER_HPP__
+
 

@@ -12,6 +12,7 @@ public:
         cost = c;
         points_scored = pts;
         position = "SG";
+	posVal = 2;
     }
     
 };

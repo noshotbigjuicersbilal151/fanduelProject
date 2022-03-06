@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -118,34 +119,152 @@ for(int i=2;i<content.size();i++)
                         salary.erase(0,2);
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
-                        Player temp = ShootingGuard(name, sal, std::stod(content[i][3]));
+                        Player temp = Center(name, sal, std::stod(content[i][3]));
                         if(c.size() <= 10){ //only need top 10
                         c.push_back(temp);
                         }
                 }
 	}
-std::cout << "Point Guards: " << std::endl;
+
+vector<Player> sorted;
 
 for(int i = 0; i < pg.size(); i++){
-	std::cout << pg[i].getPos() << " " << pg[i].getName() << " " << pg[i].getCost() << " " << pg[i].getPoints() << " " <<pg[i].calculateValue() << std::endl;
+	sorted.push_back(pg[i]);
 }
-std::cout << "Shooting Guards: " << std::endl;
+
 for(int i = 0; i < sg.size(); i++){
-        std::cout << sg[i].getPos() << " " << sg[i].getName() << " " << sg[i].getCost() << " " << sg[i].getPoints() << std::endl;
+        sorted.push_back(sg[i]);
 }
-std::cout << "Power Forwards: " << std::endl;
+
 for(int i = 0; i < pf.size(); i++){
-        std::cout << pf[i].getPos() << " " << pf[i].getName() << " " << pf[i].getCost() << " " << pf[i].getPoints() << std::endl;
+        sorted.push_back(pf[i]);
 }
-std::cout << "Small Forwards: " << std::endl;
+
 for(int i = 0; i < sf.size(); i++){
-        std::cout << sf[i].getPos() << " " << sf[i].getName() << " " << sf[i].getCost() << " " << sf[i].getPoints() << std::endl;
+        sorted.push_back(sf[i]);
 }
-std::cout << "Centers: " << std::endl;
+
 for(int i = 0; i < c.size(); i++){
-        std::cout << c[i].getPos() << " " << c[i].getName() << " " << c[i].getCost() << " " << c[i].getPoints() << std::endl;
+        sorted.push_back(c[i]);
 }
+
+
+for(int i = 0; i < sorted.size(); i++){
+        for(int k = 0; k < sorted.size(); k++){
+                if(i != k){
+                        if(sorted[k].calculateValue() < sorted[i].calculateValue()){
+                        swap(sorted[i], sorted[k]);
+                        }
+                }
+        }
+}
+
+
+vector<Player> bestLineup;
+int pg_count = 0;
+int sg_count = 0;
+int pf_count = 0;
+int sf_count = 0;
+int c_count = 0;
+
+int pg_index = 0;
+int sg_index = 2;
+int pf_index = 4;
+int sf_index = 6;
+int c_index = 8;
+
+int salaryCap = 60000;
+
+for(int i = 0; i < sorted.size(); i++){
+	
+	
+		if(salaryCap - sorted[i].getCost() >= 0){
+		
+		if(sorted[i].getPos() == "C" && c_count != 1){
+		
+			bestLineup.push_back(sorted[i]);
+			c_count++;
+			salaryCap -= sorted[i].getCost();
+			sorted.erase(sorted.begin() + i);
+			i -= 1;
+					
+		}else if(sorted[i].getPos() == "SF" && sf_count != 2){
+                        bestLineup.push_back(sorted[i]);
+                        sf_count++;
+                        salaryCap -= sorted[i].getCost();
+			 sorted.erase(sorted.begin() + i);
+			i -= 1;
+                }else if(sorted[i].getPos() == "PF" && pf_count != 2){
+                        bestLineup.push_back(sorted[i]);
+                        pf_count++;
+                        salaryCap -= sorted[i].getCost();
+	                sorted.erase(sorted.begin() + i);
+			i -=1;
+                }else if(sorted[i].getPos() == "SG" && sg_count != 2){
+                        bestLineup.push_back(sorted[i]);
+                        sg_count++;
+                        salaryCap -= sorted[i].getCost();
+                        sorted.erase(sorted.begin() + i);
+			i -= 1;
+                }else if(sorted[i].getPos() == "PG" && pg_count != 2){
+                        bestLineup.push_back(sorted[i]);
+                        pg_count++;
+                        salaryCap -= sorted[i].getCost();
+                        sorted.erase(sorted.begin() + i);
+			i -= 1;
+                }
+	
+	}
+
+}
+
+for(int i = 0; i < sorted.size(); i++){
+        for(int k = 0; k < sorted.size(); k++){
+                if(i != k){
+                        if(sorted[k].getPoints() < sorted[i].getPoints()){
+                        swap(sorted[i], sorted[k]);
+                        }
+                }
+        }
+}
+
+for(int i =0; i < sorted.size(); i++){
+	Player temp = sorted[i];
+	
+	for(int k = 0; k < bestLineup.size(); k++){
+		
+		if(temp.getPoints() > bestLineup[k].getPoints() && (salaryCap - (temp.getCost() - bestLineup[k].getCost()) >= 0)){
+		int salDiff = temp.getCost() - bestLineup[k].getCost();
+		bestLineup[k] = temp;
+		salaryCap -= salDiff;
+		break;
+}
+
+
+}
+}
+
+double totalPoints = 0.0;
+int teamSalary = 0;
+for(int i =0; i < bestLineup.size(); i++){
+	for(int k = 0; k < bestLineup.size(); k++){
+	if(i != k){
+		if(bestLineup[i].getPosVal() < bestLineup[k].getPosVal()){
+			swap(bestLineup[i], bestLineup[k]);
+	}
+}
+}
+}
+std::cout << "Best Possible Fanduel Lineup: " << std::endl << std::endl;
+for(int i = 0; i < bestLineup.size(); i++){
+	Player temp = bestLineup[i];
+	totalPoints += temp.getPoints();
+	teamSalary += temp.getCost();
+	std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;	
+}
+std::cout << std::endl << "Total Points: " << totalPoints << "     Team Salary: " << teamSalary << std::endl;
 return 0;
+
 } 
  
 
