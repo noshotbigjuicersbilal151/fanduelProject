@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include "src/csvReader.h"
+#include "csvReader.h"
 #include "src/playerSorter.h"
 #include "src/bestLineUpAlgorithm.h"
 #include "src/teamSorter.h"

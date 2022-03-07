@@ -11,7 +11,7 @@
 using namespace std;
 
 vector<vector<string>> csvReader(){
-    string fname = "..//bestPlayers.csv";
+    string fname = "bestPlayers.csv";
 
     vector<vector<string>> output;
     vector<string> row;

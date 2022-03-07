@@ -12,25 +12,13 @@ class Player{
 	int posVal;
    public:
     Player(){}
-    
-    void setPoints(double points){
-	this->points_scored = points;
-	}
-    
+     
     double getPoints(){
 	return this->points_scored; 
     }
 
-	void setCost(int c){
-	cost = c;
-	}
-
 	int getCost(){
 	return this->cost;
-	}
-
-	void setName(std::string n){
-	name = n;
 	}
 
 	std::string getName(){
