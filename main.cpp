@@ -27,10 +27,11 @@ vector<vector<string>> csvReader(){
 			row.clear();
  
 			stringstream str(line);
- 
+			if (!line.empty()){ 
 			while(getline(str, word, ',')) //separates by using commas as delimiters
 				row.push_back(word);
 			output.push_back(row);
+			}
 		}
 	}
 	
@@ -49,7 +50,7 @@ vector<Player> c;
 vector<Player> pf;
 vector<Player> sf;
 vector<vector<string>> content = csvReader(); //loads player info as strings
-for(int i=2;i<content.size();i++)
+for(int i=1;i<content.size();i++)
 	{	
 			
 			std::string t = content[i][0];
