@@ -33,8 +33,6 @@ for row in myTable.findAll('tr'):
 
     list_of_rows.append(list_of_cells)
 
-for item in list_of_rows:
-    print(' '.join(item))
 
 with open('bestPlayers.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
