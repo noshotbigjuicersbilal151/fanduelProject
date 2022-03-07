@@ -12,14 +12,17 @@ class Player{
 	int posVal;
    public:
     Player(){}
-     
+    
+    
     double getPoints(){
 	return this->points_scored; 
     }
 
+
 	int getCost(){
 	return this->cost;
 	}
+
 
 	std::string getName(){
 	return this->name;
@@ -39,4 +42,3 @@ class Player{
 	}
     
 };
-
