@@ -40,6 +40,9 @@ vector<vector<string>> csvReader(){
 }
 
 int main(){
+
+system("python3 ~/final-project-jkusc002-bnasi004-cchua032-aoce003/webscraper.py");
+
 vector<Player> pg;
 vector<Player> sg;
 vector<Player> c;
