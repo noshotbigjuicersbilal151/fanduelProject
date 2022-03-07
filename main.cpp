@@ -45,11 +45,12 @@ int main(){
 system("python3 ~/final-project-jkusc002-bnasi004-cchua032-aoce003/webscraper.py");
 
 
-vector<Player> pg;
-vector<Player> sg;
-vector<Player> c;
-vector<Player> pf;
-vector<Player> sf;
+vector<Player> sorted;
+int numPg = 0;
+int numSg = 0;
+int numPf = 0;
+int numSf = 0;
+int numC = 0;
 vector<vector<string>> content = csvReader(); //loads player info as strings
 for(int i=1;i<content.size();i++)
 	{	
@@ -67,8 +68,9 @@ for(int i=1;i<content.size();i++)
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary); //converting string salary to int
 			Player temp = PointGuard(name, sal, std::stod(content[i][3])); //creating PointGuard obj
-			if(pg.size() <= 10){ //only need top 10
-			pg.push_back(temp);
+			if(numPg <= 10){ //only need top 10
+			sorted.push_back(temp);
+			numPg++;
 			}
 			
 		}else if(t[0] == 'S' && t[1] == 'G'){ //current row is a Shooting Guard
@@ -82,8 +84,9 @@ for(int i=1;i<content.size();i++)
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
                         Player temp = ShootingGuard(name, sal, std::stod(content[i][3])); //creating ShootingGuard obj
-                        if(sg.size() <= 10){ //only need top 10
-                        sg.push_back(temp);
+                        if(numSg <= 10){ //only need top 10
+                        sorted.push_back(temp);
+			numSg++;
                         }
                 }else if(t[0] == 'P' && t[1] == 'F'){ //current row is a Power Forward
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
@@ -96,8 +99,9 @@ for(int i=1;i<content.size();i++)
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
                         Player temp = PowerForward(name, sal, std::stod(content[i][3])); //creating PowerForward obj
-                        if(pf.size() <= 10){ //only need top 10
-                        pf.push_back(temp);
+                        if(numPf <= 10){ //only need top 10
+                        sorted.push_back(temp);
+			numPf++;
                         }
                 }else if(t[0] == 'S' && t[1] == 'F'){ //current Row is a Small Forward
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
@@ -110,8 +114,9 @@ for(int i=1;i<content.size();i++)
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
                         Player temp = SmallForward(name, sal, std::stod(content[i][3])); //creating SmallForward obj
-                        if(sf.size() <= 10){ //only need top 10
-                        sf.push_back(temp);
+                        if(numSf <= 10){ //only need top 10
+                        sorted.push_back(temp);
+			numSf++;
                         }
                 }else if(t[0] == 'C'){ //current row is a Center
 			std::string salary = content[i][4] + content[i][5]; //to skip over thousands comma
@@ -124,33 +129,12 @@ for(int i=1;i<content.size();i++)
                         salary.erase(salary.end(), salary.end());
                         int sal = std::stoi(salary);
                         Player temp = Center(name, sal, std::stod(content[i][3])); //creating Center obj
-                        if(c.size() <= 10){ //only need top 10
-                        c.push_back(temp);
+                        if(numC <= 10){ //only need top 10
+                        sorted.push_back(temp);
+			numC++;
                         }
                 }
 	}
-//Combining different positions into one vector
-vector<Player> sorted;
-
-for(int i = 0; i < pg.size(); i++){
-	sorted.push_back(pg[i]);
-}
-
-for(int i = 0; i < sg.size(); i++){
-        sorted.push_back(sg[i]);
-}
-
-for(int i = 0; i < pf.size(); i++){
-        sorted.push_back(pf[i]);
-}
-
-for(int i = 0; i < sf.size(); i++){
-        sorted.push_back(sf[i]);
-}
-
-for(int i = 0; i < c.size(); i++){
-        sorted.push_back(c[i]);
-}
 
 //sorting first by value (points * 1000 / cost)
 for(int i = 0; i < sorted.size(); i++){
