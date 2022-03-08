@@ -10,8 +10,8 @@
 
 using namespace std;
 
-vector<vector<string>> csvReader(){
-    string fname = "bestPlayers.csv";
+vector<vector<string>> csvReader(string csv){
+    string fname = csv;
 
     vector<vector<string>> output;
     vector<string> row;
