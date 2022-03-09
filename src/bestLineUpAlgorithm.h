@@ -16,7 +16,7 @@
 #include "bestLineUpAlgorithm.h"
 #include "teamSorter.h"
 #include "valueSorter.h"
-
+#include "Player.h"
 using namespace std;
 
 vector<Player> bestLineUpAlgorithm(vector<Player> sorted){
@@ -116,7 +116,7 @@ bool printBestLineup(vector<Player> bestLineup, bool printed)
         Player temp = bestLineup[i];
         totalPoints += temp.getPoints();
         teamSalary += temp.getCost();
-        std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
+        std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " " << temp.getGame() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
     }
     std::cout << std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << std::endl;
     printed = true;

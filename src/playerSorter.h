@@ -37,7 +37,12 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             salary.erase(0,2); /*error asjustment*/
             salary.erase(salary.end(), salary.end());
             int sal = std::stoi(salary); /*converting string salary to int*/
-            Player temp = PointGuard(name, sal, std::stod(content[i][3])); /*creating PointGuard obj*/
+	    std::string teamName = content[i][6]; 
+	     
+	    std::string oppTeam = content[i][7];
+	     
+	    std::string teamVsTeam = teamName +" " + oppTeam;	
+            Player temp = PointGuard(name, sal, std::stod(content[i][3]), teamVsTeam ); /*creating PointGuard obj*/
             if(numPg <= 10){ /*only need top 10*/
                 sorted.push_back(temp);
                 numPg++;
@@ -53,7 +58,13 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             salary.erase(0,2);
             salary.erase(salary.end(), salary.end());
             int sal = std::stoi(salary);
-            Player temp = ShootingGuard(name, sal, std::stod(content[i][3])); /*creating ShootingGuard obj*/
+	    std::string teamName = content[i][6];
+            
+            std::string oppTeam = content[i][7];
+            
+            std::string teamVsTeam = teamName +" " + oppTeam;
+
+            Player temp = ShootingGuard(name, sal, std::stod(content[i][3]),teamVsTeam); /*creating ShootingGuard obj*/
             if(numSg <= 10){ /*only need top 10*/
                 sorted.push_back(temp);
                 numSg++;
@@ -68,7 +79,13 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             salary.erase(0,2);
             salary.erase(salary.end(), salary.end());
             int sal = std::stoi(salary);
-            Player temp = PowerForward(name, sal, std::stod(content[i][3])); /*creating PowerForward obj*/
+	    std::string teamName = content[i][6];
+           
+            std::string oppTeam = content[i][7];
+            
+            std::string teamVsTeam = teamName +" " + oppTeam;
+
+            Player temp = PowerForward(name, sal, std::stod(content[i][3]), teamVsTeam); /*creating PowerForward obj*/
             if(numPf <= 10){ /*only need top 10*/
                 sorted.push_back(temp);
                 numPf++;
@@ -83,7 +100,13 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             salary.erase(0,2);
             salary.erase(salary.end(), salary.end());
             int sal = std::stoi(salary);
-            Player temp = SmallForward(name, sal, std::stod(content[i][3])); /*creating SmallForward obj*/
+	    std::string teamName = content[i][6];
+            
+            std::string oppTeam = content[i][7];
+            
+            std::string teamVsTeam = teamName +" " + oppTeam;
+
+            Player temp = SmallForward(name, sal, std::stod(content[i][3]), teamVsTeam); /*creating SmallForward obj*/
             if(numSf <= 10){ /*only need top 10*/
                 sorted.push_back(temp);
                 numSf++;
@@ -98,7 +121,13 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             salary.erase(0,2);
             salary.erase(salary.end(), salary.end());
             int sal = std::stoi(salary);
-            Player temp = Center(name, sal, std::stod(content[i][3])); /*creating Center obj*/
+	    std::string teamName = content[i][6];
+            
+            std::string oppTeam = content[i][7];
+            
+            std::string teamVsTeam = teamName +" " + oppTeam;
+
+            Player temp = Center(name, sal, std::stod(content[i][3]), teamVsTeam); /*creating Center obj*/
             if(numC <= 10){ /*only need top 10*/
                 sorted.push_back(temp);
                 numC++;

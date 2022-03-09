@@ -36,8 +36,12 @@ vector<Player> sorted = playerSorter(contents);
 EXPECT_EQ("SG", sorted[0].getPos());
 }
 
-
-
+TEST(FixedCSV, FirstPlayerGame) {
+vector<vector<string>> contents = csvReader("test.csv"); 
+vector<Player> sorted = playerSorter(contents); 
+EXPECT_EQ("hou v ind", sorted[0].getGame()); 
+} 
+ 
 TEST(FixedCSV, BestLineup) {
 vector<vector<string>> contents = csvReader("test.csv");
 vector<Player> sorted = playerSorter(contents);

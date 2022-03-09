@@ -7,10 +7,11 @@
 class PointGuard : public Player {
 public:
 	PointGuard(){}
-    PointGuard(std::string n, int c, double pts){
+    PointGuard(std::string n, int c, double pts, std::string t){
         name = n;
         cost = c;
         points_scored = pts;
+	teamVsTeam = t;
         position = "PG";
 	posVal = 1;
     }

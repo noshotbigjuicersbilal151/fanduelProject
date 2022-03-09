@@ -7,10 +7,11 @@
 class PowerForward : public Player {
 public:
 	PowerForward(){}
-    PowerForward(std::string n, int c, double pts ){
+    PowerForward(std::string n, int c, double pts, std::string t){
         name = n;
         cost = c;
         points_scored = pts;
+	teamVsTeam = t;
         position = "PF";
 	posVal = 3;
     }

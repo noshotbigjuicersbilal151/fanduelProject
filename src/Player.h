@@ -5,6 +5,7 @@ class Player{
     
     protected:
         int cost;
+	std::string teamVsTeam;
         double points_scored;
         std::string name;
 	std::string  position;
@@ -14,10 +15,13 @@ class Player{
     Player(){}
     
     
-    double getPoints(){
+    	double getPoints(){
 	return this->points_scored; 
-    }
+	}
 
+	std::string getGame(){ 
+	return this->teamVsTeam;
+	} 
 
 	int getCost(){
 	return this->cost;
@@ -32,7 +36,7 @@ class Player{
 	return this->position;
 	}
 
-    double calculateValue(){
+    	double calculateValue(){
 	value = (points_scored * 1000) / cost;
 	return value;
 	}
