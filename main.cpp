@@ -9,7 +9,6 @@
 #include "src/valueSorter.h"
 
 using namespace std;
-
 int main(){
 
     system("python3 ~/final-project-jkusc002-bnasi004-cchua032-aoce003/webscraper.py");
@@ -24,18 +23,10 @@ int main(){
     vector<Player> bestLineup = bestLineUpAlgorithm(sorted);
 
 /*outputting team and tracking team points and team salary*/
-    double totalPoints = 0.0;
-    int teamSalary = 0;
-    teamSorter(bestLineup);
+    bool printed = false;
+    if(!printed){
 
-    std::cout << "Best Possible FanDuel Lineup: " << std::endl << std::endl;
-    for(int i = 0; i < bestLineup.size(); i++){
-        Player temp = bestLineup[i];
-        totalPoints += temp.getPoints();
-        teamSalary += temp.getCost();
-        std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
-    }
-    std::cout << std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << std::endl;
+	    printBestLineup(bestLineup, printed);
+    } 
     return 0;
-
 }

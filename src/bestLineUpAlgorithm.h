@@ -12,6 +12,10 @@
 #include "SmallForward.h"
 #include "PowerForward.h"
 #include "center.h"
+#include "playerSorter.h"
+#include "bestLineUpAlgorithm.h"
+#include "teamSorter.h"
+#include "valueSorter.h"
 
 using namespace std;
 
@@ -100,6 +104,23 @@ vector<Player> bestLineUpAlgorithm(vector<Player> sorted){
         }
     }
     return bestLineup;
+}
+bool printBestLineup(vector<Player> bestLineup, bool printed)
+{
+    double totalPoints = 0.0;
+    int teamSalary = 0;
+    teamSorter(bestLineup);
+
+    std::cout << "Best Possible FanDuel Lineup: " << std::endl << std::endl;
+    for(int i = 0; i < bestLineup.size(); i++){
+        Player temp = bestLineup[i];
+        totalPoints += temp.getPoints();
+        teamSalary += temp.getCost();
+        std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
+    }
+    std::cout << std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << std::endl;
+    printed = true;
+    return printed;
 }
 
 #endif //__BEST_LINE_UP_ALGORITHM_H__
