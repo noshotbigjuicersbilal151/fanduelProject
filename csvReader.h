@@ -12,8 +12,11 @@ using namespace std;
 /* CSV File Parser taken from: https://java2blog.com/read-csv-file-in-cpp/
  * Author: Aditya Raj, 2020
  * */
-vector<vector<string>> csvReader(string csv){
-    string fname = csv;
+
+vector<vector<string>> csvReader(){
+
+   
+ string fname = "bestPlayers.csv";
 
     vector<vector<string>> output;
     vector<string> row;

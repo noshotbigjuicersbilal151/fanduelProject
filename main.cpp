@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <sstream>
 #include "csvReader.h"
 #include "src/Team.h"
 
@@ -9,9 +8,8 @@ using namespace std;
 
 int main(){
 
-    system("python3 ~/final-project-jkusc002-bnasi004-cchua032-aoce003/webscraper.py");
-
-    vector<vector<string>> content = csvReader("bestPlayers.csv"); //loads player info as strings
+ system("python3 webscraper.py");
+    vector<vector<string>> content = csvReader(); //loads player info as strings
 
     Team fanduel = Team(content);
 	fanduel.getPositions();
