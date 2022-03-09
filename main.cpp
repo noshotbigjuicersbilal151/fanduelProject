@@ -7,12 +7,10 @@
 using namespace std;
 
 int main(){
+	system("python3 webscraper.py");
+	vector<vector<string>> content = csvReader(); //loads player info as strings
 
-
- system("python3 webscraper.py");
-    vector<vector<string>> content = csvReader(); //loads player info as strings
-
-    Team fanduel = Team(content);
+    	Team fanduel = Team(content);
 
 	fanduel.getPositions();
 	fanduel.valueSorter();
