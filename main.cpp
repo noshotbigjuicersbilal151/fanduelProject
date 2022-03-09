@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 #include "src/csvReader.h"
+#include "csvReader.h"
 #include "src/Team.h"
 
 using namespace std;
@@ -13,8 +14,7 @@ int main(){
 
 	vector<vector<string>> content = csvReader("bestPlayers.csv"); //loads player info as strings
 	
-	Team fanduel = Team(content);
-
+    	Team fanduel = Team(content);
 	fanduel.getPositions();
 	fanduel.valueSorter();
 	fanduel.bestByValue();
@@ -22,6 +22,5 @@ int main(){
 	fanduel.spendRemainingCapOnPoints();
 	fanduel.sortByPosition();
 	fanduel.printBestLineup();
-
 	return 0;
 }
