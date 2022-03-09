@@ -4,17 +4,18 @@
 #include "Player.h"
 #include <string>
 
-class PowerForward : public Player {
-public:
-	PowerForward(){}
-    PowerForward(std::string n, int c, double pts ){
-        name = n;
-        cost = c;
-        points_scored = pts;
-        position = "PF";
-	posVal = 3;
-    }
-    
+class PowerForward : public Player 
+{
+	public:
+		PowerForward(){}
+    		PowerForward(std::string n, int c, double pts )
+		{
+        		name = n;
+        		cost = c;
+        		points_scored = pts;
+        		position = "PF";
+			posVal = 3;
+    		} 
 };
 
 #endif //__POWERFORWARD_HPP__
