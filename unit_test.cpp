@@ -8,34 +8,41 @@
 using namespace std;
 
 TEST(Webscraper, validDate){
+vector<vector<string>> contents = csvReader();
+int x = 0;
+if(contents.size() != 0){
+x = 1;
+}
+
+EXPECT_EQ(1, x);
 
 }
 TEST(FixedCSV, getPositions) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 vector<Player> players = test.getAllPlayers();
 
-EXPECT_EQ("James^ Harden",players[0].getName());
-EXPECT_EQ("DeMar^ DeRozan", players[1].getName());
-EXPECT_EQ("Kyrie^ Irving", players[2].getName());
+EXPECT_EQ("Russell^ Westbrook",players[0].getName());
+EXPECT_EQ("Victor^ Oladipo", players[1].getName());
+EXPECT_EQ("Devin^ Booker", players[2].getName());
 }
 
 TEST(FixedCSV, valueSorter) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 test.valueSorter();
 
 vector<Player> players = test.getAllPlayers();
 
-EXPECT_EQ("Taurean Prince",players[0].getName());
-EXPECT_EQ("Nemanja Bjelica", players[1].getName());
-EXPECT_EQ("Rodney Stuckey", players[2].getName());
+EXPECT_EQ("Josh^ Jackson",players[0].getName());
+EXPECT_EQ("Jakob Poeltl", players[1].getName());
+EXPECT_EQ("Andre Iguodala", players[2].getName());
 }
 
 TEST(FixedCSV, bestByValue) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 test.valueSorter();
@@ -43,13 +50,13 @@ test.bestByValue();
 
 vector<Player> players = test.getBestPlayers();
 
-EXPECT_EQ("Rodney Stuckey",players[2].getName());
-EXPECT_EQ("Courtney^ Lee", players[3].getName());
-EXPECT_EQ("Richaun Holmes", players[4].getName());
+EXPECT_EQ("Eric Moreland",players[3].getName());
+EXPECT_EQ("Shaquille Harrison", players[4].getName());
+EXPECT_EQ("Jarell Martin", players[5].getName());
 }
 
 TEST(FixedCSV, sortByPoints) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 test.valueSorter();
@@ -58,13 +65,13 @@ test.sortByPointsScored();
 
 vector<Player> players = test.getAllPlayers();
 
-EXPECT_EQ("DeMar^ DeRozan",players[2].getName());
-EXPECT_EQ("Hassan^ Whiteside", players[3].getName());
-EXPECT_EQ("Draymond^ Green", players[4].getName());
+EXPECT_EQ("Marc^ Gasol",players[2].getName());
+EXPECT_EQ("Devin^ Booker", players[3].getName());
+EXPECT_EQ("Otto^ Porter", players[4].getName());
 }
 
 TEST(FixedCSV, bestLineup) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 test.valueSorter();
@@ -74,13 +81,13 @@ test.spendRemainingCapOnPoints();
 
 vector<Player> players = test.getBestPlayers();
 
-EXPECT_EQ("Karl-Anthony^ Towns",players[6].getName());
-EXPECT_EQ("Malcolm Brogdon", players[7].getName());
-EXPECT_EQ("Ty^ Lawson", players[8].getName());
+EXPECT_EQ("Jodie Meeks",players[6].getName());
+EXPECT_EQ("Russell^ Westbrook", players[7].getName());
+EXPECT_EQ("Andrew^ Harrison", players[8].getName());
 }
 
 TEST(FixedCSV, sortByPosition) {
-vector<vector<string>> contents = csvReader("test.csv");
+vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
 test.getPositions();
 test.valueSorter();
@@ -101,9 +108,11 @@ EXPECT_EQ(5, players[8].getPosVal());
 
 
 int main(int argc, char **argv) {
-  cout << "Enter 2, 28, then 2018 (Feb 28, 2018) for test" << endl;
-  system("python3 ~/final-project-jkusc002-bnasi004-cchua032-aoce003/webscraper.py");
+cout << "Enter 2, 28, 2018 (Feb 28, 2018) for testing" << endl;
+ system("python3 webscraper.py");
   ::testing::InitGoogleTest(&argc, argv);
-  int first = RUN_ALL_TESTS();
+	
+	
 return RUN_ALL_TESTS();
+
 }
