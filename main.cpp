@@ -3,10 +3,6 @@
 #include <vector>
 #include <sstream>
 #include "csvReader.h"
-#include "src/playerSorter.h"
-#include "src/bestLineUpAlgorithm.h"
-#include "src/teamSorter.h"
-#include "src/valueSorter.h"
 #include "src/Team.h"
 
 using namespace std;

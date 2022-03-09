@@ -197,6 +197,8 @@ public:
             }
         }
     }
+
+
 	}
 
 	void spendRemainingCapOnPoints(){
@@ -214,7 +216,9 @@ public:
 
 
         }
-    }
+
+}
+
 
         }
 
@@ -243,4 +247,12 @@ swap(bestPlayers[i], bestPlayers[k]);
 }
 }
 }
+
+	vector<Player> getBestPlayers(){
+		return bestPlayers;
+	}
+
+	vector<Player> getAllPlayers(){
+		return allPlayers;
+	}
 };
