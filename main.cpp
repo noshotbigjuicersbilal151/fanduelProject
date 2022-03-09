@@ -8,10 +8,12 @@ using namespace std;
 
 int main(){
 
+
  system("python3 webscraper.py");
     vector<vector<string>> content = csvReader(); //loads player info as strings
 
     Team fanduel = Team(content);
+
 	fanduel.getPositions();
 	fanduel.valueSorter();
 	fanduel.bestByValue();
@@ -19,6 +21,5 @@ int main(){
 	fanduel.spendRemainingCapOnPoints();
 	fanduel.sortByPosition();
 	fanduel.printBestLineup();
-    return 0;
-
+	return 0;
 }
