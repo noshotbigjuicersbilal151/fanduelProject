@@ -31,6 +31,7 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             std::string salary = content[i][4] + content[i][5]; /*to skip over thousands comma*/
             std::string firstName = content[i][2];
             firstName.erase(firstName.end()-1, firstName.end()); /*error adjustment from comma delimiter*/
+	    firstName.erase(0, 1);
             std::string lastName = content[i][1];
             lastName.erase(0, 1);
             std::string name = firstName +" " + lastName;
@@ -47,7 +48,8 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             std::string salary = content[i][4] + content[i][5]; /*to skip over thousands comma*/
             std::string firstName = content[i][2];
             firstName.erase(firstName.end()-1, firstName.end());
-            std::string lastName = content[i][1];
+           firstName.erase(0, 1);
+		 std::string lastName = content[i][1];
             lastName.erase(0, 1);
             std::string name = firstName +" " + lastName;
             salary.erase(0,2);
@@ -62,7 +64,8 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             std::string salary = content[i][4] + content[i][5]; /*to skip over thousands comma*/
             std::string firstName = content[i][2];
             firstName.erase(firstName.end()-1, firstName.end());
-            std::string lastName = content[i][1];
+           firstName.erase(0, 1);
+		 std::string lastName = content[i][1];
             lastName.erase(0, 1);
             std::string name = firstName +" " + lastName;
             salary.erase(0,2);
@@ -77,7 +80,8 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             std::string salary = content[i][4] + content[i][5]; /*to skip over thousands comma*/
             std::string firstName = content[i][2];
             firstName.erase(firstName.end()-1, firstName.end());
-            std::string lastName = content[i][1];
+          	firstName.erase(0, 1);
+	  std::string lastName = content[i][1];
             lastName.erase(0, 1);
             std::string name = firstName +" " + lastName;
             salary.erase(0,2);
@@ -92,7 +96,8 @@ vector<Player> playerSorter(vector<vector<string>> content) {
             std::string salary = content[i][4] + content[i][5]; /*to skip over thousands comma*/
             std::string firstName = content[i][2];
             firstName.erase(firstName.end()-1, firstName.end());
-            std::string lastName = content[i][1];
+        firstName.erase(0, 1);
+	    std::string lastName = content[i][1];
             lastName.erase(0, 1);
             std::string name = firstName +" " + lastName;
             salary.erase(0,2);
