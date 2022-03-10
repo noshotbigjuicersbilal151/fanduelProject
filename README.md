@@ -85,12 +85,14 @@ We ultimately used the Singleton design pattern. We decided to do this because a
   
   __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is     June 22, 2021 (06,22,2021).__
   
-  After you have received your best line-up for that particular date, the program will ask you if you want to enter another date.
+  After you have received your best line-up for that particular date, the program will ask you if you want to enter another date. It will ask for a character input so the user can reply to this segment of the program with one letter.
   ```
   Do you want to find another lineup from another date?
-  Yes (Y) / No (N) :
+  Yes (Y) / No (N) : Y
   ```
   If you entered "Y" or "y," the program will execute the program again and the user can now enter another date for that days best line-up. If the user inputs anything else, the program would end, completing its objective. 
+  
+  **Note: It will not take "Yes" as an input, it can only accept 'Y' or 'y' as an input to execute the program again**
   
   ## Testing
   For testing we adopted the google test framework. We ran unit tests on all of our functions including our webscraper. We created the file CMakeLists.txt to generate an executable for the unit tests under a file called unit_test. This will pull the unit tests from unit_test.cpp. 
