@@ -54,9 +54,9 @@ We are using a composite pattern for implementing out Team, Player, and position
    ```
    After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions:   
    ```
-   $ python3 -m pip install --user requests
-   $ python3 -m pip install --user pandas
-   $ python3 -m pip install --user bs4
+   $ python3 -m pip3 install --user requests
+   $ python3 -m pip3 install --user pandas
+   $ python3 -m pip3 install --user bs4
    ```
   After all of these have successfully been installed, the program will be able to run.   
   In order to run the program, first compile main.cpp with following command:   
