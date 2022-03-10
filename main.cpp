@@ -24,8 +24,10 @@ int main(){
 		fanduel.spendRemainingCapOnPoints();
 		fanduel.sortByPosition();
 		fanduel.printBestLineup();
+		/*These two lines of code delays the program so the user may look at their best lineup before choosing to do the program again or stop it*/
 		this_thread::sleep_for(chrono::seconds(2));
         	this_thread::sleep_until(chrono::system_clock::now() + chrono::seconds(1));
+		/*This last segment is what allows the program to loop again */
         	cout << endl << "Do you want to find another lineup from another date?" << endl;
         	cout << "Yes (Y) / No (N) :  ";
         	cin >> response;
