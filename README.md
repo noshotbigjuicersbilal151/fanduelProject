@@ -84,7 +84,14 @@ We ultimately used the Singleton design pattern. We decided to do this because a
   **Inputting "feb" for the month will not output the correct data.**  
   
   __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is     June 22, 2021 (06,22,2021).__
- 
+  
+  After you have received your best line-up for that particular date, the program will ask you if you want to enter another date.
+  ```
+  Do you want to find another lineup from another date?
+  Yes (Y) / No (N) :
+  ```
+  If you entered "Y" or "y," the program will execute the program again and the user can now enter another date for that days best line-up. If the user inputs anything else, the program would end, completing its objective. 
+  
   ## Testing
   For testing we adopted the google test framework. We ran unit tests on all of our functions including our webscraper. We created the file CMakeLists.txt to generate an executable for the unit tests under a file called unit_test. This will pull the unit tests from unit_test.cpp. 
   We basically created two test suites, one that uses a fixed csv file that is generated at the beginning of the tests, and one that tests our webscraper. 
