@@ -91,5 +91,22 @@ We are using a composite pattern for implementing out Team, Player, and position
   __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is     June 22, 2021 (06,22,2021).__
  
   ## Testing
-  How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+  For testing we adopted the google test framework. We ran unit tests on all of our functions including our webscraper. We created the file CMakeLists.txt to generate an executable for the unit tests under a file called unit_test. This will pull the unit tests from unit_test.cpp. 
+  We basically created two test suites, one that uses a fixed csv file that is generated at the beginning of the tests, and one that tests our webscraper. 
+  
+  ## Fixed CSV Test Suite
+  In this test suite we test our algorithm that creates the best line up to ensure functionality. This consists of multiple functions including: 
+  ```
+   getPositions()
+   valueSorter()
+   bestByValue()
+   sortByPointsScored()
+   spendRemainingCapOnPoints()
+   sortByPosition()
+  ``` 
+  This test suite is reliant on asking the tester to give the python webscraper a certain date. We know which values to expect for each function so we simply pass the test if the values match up. We ensure this works because if we enter a different date, all of our tests fail. 
+  
+  ## Webscraper Test Suite
+  Testing the webscraper proved to be quite difficult. Our webscraper is implemented in python and its primary use is to give us a csv file to read. Since googletest framework is used for c++ we had to get creative on how to test it. Our solution was to test that it would indeed create the csv file needed. We simply remove the existing csv file, call our webscraper, and check if a new file is created. We also test if the date that was input is valid. We do this by checking the contets of the csv file, if it's empty itll fail and if its full it'll pass.
+
  
