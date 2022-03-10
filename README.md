@@ -75,7 +75,7 @@ We are using a composite pattern for implementing out Team, Player, and position
    Enter day: 28 
    Enter year: 2015 
   ``` 
-  ** NOTE: Example Date is given above **
+  **NOTE: Example Date is given above**
   
   Inputting the date will bring up the best line up possible on that day.  
   Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
