@@ -53,40 +53,29 @@ We are using a composite pattern for implementing out Team, Player, and position
  >  ``` 
  >  $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
  >  ```
- >  After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions.  
- >  For Windows use:   
+ >  After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions:   
  >  ```
- >  $ python --m pip install requests
- >  $ python --m pip install pandas
- >  $ python --m pip install bs4
- >  ```
- >  For Mac/Linux use:   
- >  ```
- >  $ python3 --m pip install --user requests
- >  $ python3 --m pip install --user pandas
- >  $ python3 --m pip install --user bs4
+ >  $ python3 --m pip3 install --user requests
+ >  $ python3 --m pip3 install --user pandas
+ >  $ python3 --m pip3 install --user bs4
  >  ```
  > After all of these have successfully been installed, the program will be able to run.   
- > In order to  the program, first run CMake with following command:  
- > **Do not forget to include the '.'** 
+ > In order to run the program, first compile main.cpp with following command:   
  > ```
- >  $ cmake3 . 
+ >  $ g++ -o FanduelProgram main.cpp 
  >  ```
  >   
- > Then run Make by using the following command: 
+ > Then run the executable using the following command: 
  >  ``` 
- >  $ make
- >  ``` 
- >  Finally we can run the program by using: 
- >  ``` 
- >  $ ./test 
- >  ``` 
+ >  $ ./FanduelProgram
+ >  ```
  >  The program will ask you for a month, day, and year in order.
  > ```  
- >  Enter month: ex 02
- >  Enter day: ex 28 
- >  Enter year: ex 2015 
+ >  Enter month: 02
+ >  Enter day: 28 
+ >  Enter year: 2015 
  > ``` 
+ > ** NOTE: Example Date is given above **
  >  Inputting the date will bring up the best line up possible on that day.  
  >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
  > **The program will only work if the user inputs numbers for the date.**   
