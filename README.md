@@ -21,6 +21,7 @@ Now, again, we cannot accurately predict the future. That said, we can use past 
   ## Phase II
 
 ## Class Diagram
+![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/UML%20Diagram.png)
  The client calls on csvReader(), which in turn calls on webscraper.py which webscrapes [this website](http://rotoguru1.com/cgi-bin/hyday.pl?game=fd&mon=2&day=22&year=2021&scsv=) (date values changeable based on input) and generates a .csv file with a list of players and their information from that day. csvReader() then parses the .csv file into a 2D vector of strings. Then the client instantiates a Team object. The Team class houses vectors to hold Players in their different forms, as well as various methods to manipulate the vectors of players to find the best possible lineup. The client calls these methods in a specific order to get the best lineup. The Player class is separate from Team, and represents each individual player. Each Player has variables to hold their cost, points scored, name, position, value, and a position value (for sorting purposes). The Player class has getters for each variable except value, in which it has a method to calculateValue() instead. The five position classes (PointGuard, ShootingGuard, PowerForward, SmallForward, Center) all inherit from PLayer and simply define their position strings and values appropriately.
  
  ## Phase III
@@ -31,8 +32,9 @@ We ultimately used the Singleton design pattern. We decided to do this because a
  ## Screenshots
  Screenshots of the input/output after running your application  
  ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/7817f44d513d62728e6639029c085bd51b58ed6a/output1.png)
- ![image](https://user-images.githubusercontent.com/97256479/157591012-844958c9-448f-4b47-9565-21c456831cdf.png)  
- ![image](https://user-images.githubusercontent.com/97256479/157591040-80d04981-d332-4022-b2cc-bf026e1c6784.png)
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output2.png)
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output3.png)  
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output4.png)
  ## Installation/Usage 
  In order to install the program first make sure you are in the your home directory by using the following command:
    ```
