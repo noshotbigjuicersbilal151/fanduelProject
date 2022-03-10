@@ -58,7 +58,7 @@ We are using a composite pattern for implementing out Team, Player, and position
    $ python3 -m pip3 install --user pandas
    $ python3 -m pip3 install --user bs4
    ```
-   for python 2 and below use:
+   for python 2.7 and below use:
    ``` 
    $ python3 -m pip install --user requests
    $ python3 -m pip install --user pandas
