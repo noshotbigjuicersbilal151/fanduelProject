@@ -37,9 +37,8 @@ We are using a composite pattern for implementing out Team, Player, and position
  
  ## Screenshots
  Screenshots of the input/output after running your application  
- ![image](https://user-images.githubusercontent.com/97256479/157572622-808265b0-aaa6-49b6-ae21-7132a3e357de.png)  
- ![image](https://user-images.githubusercontent.com/97256479/157572784-ddb20106-1048-4a69-a5bd-203dbf445c1e.png)
-
+ ![image](https://user-images.githubusercontent.com/97256479/157591012-844958c9-448f-4b47-9565-21c456831cdf.png)  
+ ![image](https://user-images.githubusercontent.com/97256479/157591040-80d04981-d332-4022-b2cc-bf026e1c6784.png)
  ## Installation/Usage 
  In order to install the program first make sure you are in the your home directory by using the following command:
    ```
