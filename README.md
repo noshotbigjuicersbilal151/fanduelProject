@@ -37,8 +37,59 @@ We are using a composite pattern for implementing out Team, Player, and position
  
  ## Screenshots
  > Screenshots of the input/output after running your application
- ## Installation/Usage
- > Instructions on installing and running your application
+ > Input looks like 
+ > 
+ ## Installation/Usage 
+ > In order to install the program first make sure you are in the your home directory by using the following command:
+ >  ```
+ >  $ cd ~ 
+ >  ```
+ >  Then clone the repository by using the git clone command followed by the URL repository link:
+ >  ```
+ >  $ git clone https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003.git
+ >  ```
+ >  Change the directory from home to the repository with the following: 
+ >  ``` 
+ >  $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
+ >  ```
+ >  After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions.  
+ >  For Windows use:   
+ >  ```
+ >  $ python --m pip install requests
+ >  $ python --m pip install pandas
+ >  $ python --m pip install bs4
+ >  ```
+ >  For Mac/Linux use:   
+ >  ```
+ >  $ python3 --m pip install --user requests
+ >  $ python3 --m pip install --user pandas
+ >  $ python3 --m pip install --user bs4
+ >  ```
+ > After all of these have successfully been installed, the program will be able to run.   
+ > In order to  the program, first run CMake with following command:  
+ > **Do not forget to include the '.'** 
+ > ```
+ >  $ cmake3 . 
+ >  ```
+ >   
+ > Then run Make by using the following command: 
+ >  ``` 
+ >  $ make
+ >  ``` 
+ >  Finally we can run the program by using: 
+ >  ``` 
+ >  $ ./test 
+ >  ``` 
+ >  The program will ask you for a month, day, and year in order.
+ > ```  
+ >  Enter month: ex 02
+ >  Enter day: ex 28 
+ >  Enter year: ex 2015 
+ > ``` 
+ >  Inputting the date will bring up the best line up possible on that day.  
+ > **The program will only work if the user inputs numbers for the date. Inputting "feb" for the month will not output the correct data.**  
+ > __Due to the website used in the webscrapper, the date of the last game that will find the best line up is June 22, 2021 (06,22,2021).__
+ >
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
