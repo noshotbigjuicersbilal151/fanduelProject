@@ -30,6 +30,7 @@ We ultimately used the Singleton design pattern. We decided to do this because a
  
  ## Screenshots
  Screenshots of the input/output after running your application  
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/7817f44d513d62728e6639029c085bd51b58ed6a/output1.png)
  ![image](https://user-images.githubusercontent.com/97256479/157591012-844958c9-448f-4b47-9565-21c456831cdf.png)  
  ![image](https://user-images.githubusercontent.com/97256479/157591040-80d04981-d332-4022-b2cc-bf026e1c6784.png)
  ## Installation/Usage 
