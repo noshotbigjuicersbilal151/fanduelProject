@@ -36,8 +36,9 @@ We are using a composite pattern for implementing out Team, Player, and position
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
- > Input looks like 
+ > Screenshots of the input/output after running your application  
+ > ![image](https://user-images.githubusercontent.com/97256479/157572622-808265b0-aaa6-49b6-ae21-7132a3e357de.png)  
+ > ![image](https://user-images.githubusercontent.com/97256479/157572784-ddb20106-1048-4a69-a5bd-203dbf445c1e.png)
  > 
  ## Installation/Usage 
  > In order to install the program first make sure you are in the your home directory by using the following command:
@@ -87,6 +88,7 @@ We are using a composite pattern for implementing out Team, Player, and position
  >  Enter year: ex 2015 
  > ``` 
  >  Inputting the date will bring up the best line up possible on that day.  
+ >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.
  > **The program will only work if the user inputs numbers for the date. Inputting "feb" for the month will not output the correct data.**  
  > __Due to the website used in the webscrapper, the date of the last game that will find the best line up is June 22, 2021 (06,22,2021).__
  >
