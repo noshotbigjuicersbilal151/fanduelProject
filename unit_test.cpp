@@ -7,16 +7,6 @@
 
 using namespace std;
 
-TEST(Webscraper, validDate){
-vector<vector<string>> contents = csvReader();
-int x = 0;
-if(contents.size() != 0){
-x = 1;
-}
-
-EXPECT_EQ(1, x);
-
-}
 TEST(FixedCSV, getPositions) {
 vector<vector<string>> contents = csvReader();
 Team test = Team(contents);
@@ -104,7 +94,29 @@ EXPECT_EQ(4, players[6].getPosVal());
 EXPECT_EQ(5, players[8].getPosVal());
 }
 
+TEST(Webscraper, fileCreated){
+bool exists = true;
+system("rm bestPlayers.csv");
+cout << "bestPlayers.csv has been deleted, we will now test if the program creates a new csv, enter any date" << endl;
+system("python3 webscraper.py");
+   ifstream ifile;
+   ifile.open("bestPlayers.csv");
+   if(ifile) {
+      exists = true;
+   } else {
+      exists = false;
+   }
+EXPECT_TRUE(exists);
+}
 
+TEST(Webscraper, validDate){
+vector<vector<string>> contents = csvReader();
+int x = 0;
+if(contents.size() != 0){
+        x = 1;
+        }
+EXPECT_EQ(1, x);
+}
 
 
 int main(int argc, char **argv) {
