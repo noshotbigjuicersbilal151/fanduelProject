@@ -207,14 +207,17 @@ class Team
         }
 
 	void printBestLineup(){
+		int overallValue = 0.0; 
 		double totalPoints = 0.0;
     		int teamSalary = 60000 - salaryCap;
+		std::cout << "Ps Name         Pts  Cost  Value"<<std::endl;  
 		for(int i = 0; i < bestPlayers.size(); i++){
 		  	Player temp = bestPlayers[i];
         		totalPoints += temp.getPoints();
+			overallValue += temp.calculateValue();
         		std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
     		}
-    		std::cout << std::endl <<  std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << std::endl;	
+    		std::cout << std::endl <<  std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << "    Overall Value: " << overallValue << std::endl;	
 	}	
 
 	void sortByPosition() {
