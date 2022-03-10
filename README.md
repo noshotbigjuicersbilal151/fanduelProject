@@ -81,11 +81,11 @@ We are using a composite pattern for implementing out Team, Player, and position
  >  ``` 
  >  $ ./test 
  >  ``` 
- >  The program will ask you for a month, day, and year in order.
+ >  The program will ask you for a month, day, and year in order. ex 02,28,2015
  > ```  
- >  Enter month: ex 02
- >  Enter day: ex 28 
- >  Enter year: ex 2015 
+ >  Enter month: 02
+ >  Enter day: 28 
+ >  Enter year: 2015 
  > ``` 
  >  Inputting the date will bring up the best line up possible on that day.  
  >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
