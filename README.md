@@ -52,13 +52,13 @@ We are using a composite pattern for implementing out Team, Player, and position
    ``` 
    $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
    ```
-   After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions for Mac use: 
+   After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions for python 3 and higher use: 
    ```
    $ python3 -m pip3 install --user requests
    $ python3 -m pip3 install --user pandas
    $ python3 -m pip3 install --user bs4
    ```
-   for Windows use:
+   for python 2 and below use:
    ``` 
    $ python3 -m pip install --user requests
    $ python3 -m pip install --user pandas
