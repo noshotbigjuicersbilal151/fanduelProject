@@ -56,15 +56,15 @@ We are using a composite pattern for implementing out Team, Player, and position
  >  After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions.  
  >  For Windows use:   
  >  ```
- >  $ python --m pip install requests
- >  $ python --m pip install pandas
- >  $ python --m pip install bs4
+ >  $ python -m pip install requests
+ >  $ python -m pip install pandas
+ >  $ python -m pip install bs4
  >  ```
  >  For Mac/Linux use:   
  >  ```
- >  $ python3 --m pip install --user requests
- >  $ python3 --m pip install --user pandas
- >  $ python3 --m pip install --user bs4
+ >  $ python3 -m pip install --user requests
+ >  $ python3 -m pip install --user pandas
+ >  $ python3 -m pip install --user bs4
  >  ```
  > After all of these have successfully been installed, the program will be able to run.   
  > In order to  the program, first run CMake with following command:  
