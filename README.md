@@ -36,52 +36,52 @@ We are using a composite pattern for implementing out Team, Player, and position
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application  
- > ![image](https://user-images.githubusercontent.com/97256479/157572622-808265b0-aaa6-49b6-ae21-7132a3e357de.png)  
- > ![image](https://user-images.githubusercontent.com/97256479/157572784-ddb20106-1048-4a69-a5bd-203dbf445c1e.png)
- > 
+ Screenshots of the input/output after running your application  
+ ![image](https://user-images.githubusercontent.com/97256479/157572622-808265b0-aaa6-49b6-ae21-7132a3e357de.png)  
+ ![image](https://user-images.githubusercontent.com/97256479/157572784-ddb20106-1048-4a69-a5bd-203dbf445c1e.png)
+
  ## Installation/Usage 
- > In order to install the program first make sure you are in the your home directory by using the following command:
- >  ```
- >  $ cd ~ 
- >  ```
- >  Then clone the repository by using the git clone command followed by the URL repository link:
- >  ```
- >  $ git clone https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003.git
- >  ```
- >  Change the directory from home to the repository with the following: 
- >  ``` 
- >  $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
- >  ```
- >  After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions:   
- >  ```
- >  $ python3 --m pip3 install --user requests
- >  $ python3 --m pip3 install --user pandas
- >  $ python3 --m pip3 install --user bs4
- >  ```
- > After all of these have successfully been installed, the program will be able to run.   
- > In order to run the program, first compile main.cpp with following command:   
- > ```
- >  $ g++ -o FanduelProgram main.cpp 
- >  ```
- >   
- > Then run the executable using the following command: 
- >  ``` 
- >  $ ./FanduelProgram
- >  ```
- >  The program will ask you for a month, day, and year in order.
- > ```  
- >  Enter month: 02
- >  Enter day: 28 
- >  Enter year: 2015 
- > ``` 
- > ** NOTE: Example Date is given above **
- >  Inputting the date will bring up the best line up possible on that day.  
- >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
- > **The program will only work if the user inputs numbers for the date.**   
- > **Inputting "feb" for the month will not output the correct data.**  
- > __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is June 22, 2021 (06,22,2021).__
- >
- ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ In order to install the program first make sure you are in the your home directory by using the following command:
+   ```
+   $ cd ~ 
+   ```
+   Then clone the repository by using the git clone command followed by the URL repository link:
+   ```
+   $ git clone https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003.git
+   ```
+   Change the directory from home to the repository with the following: 
+   ``` 
+   $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
+   ```
+   After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions:   
+   ```
+   $ python3 --m pip3 install --user requests
+   $ python3 --m pip3 install --user pandas
+   $ python3 --m pip3 install --user bs4
+   ```
+  After all of these have successfully been installed, the program will be able to run.   
+  In order to run the program, first compile main.cpp with following command:   
+  ```
+   $ g++ -o FanduelProgram main.cpp 
+   ```
+    
+  Then run the executable using the following command: 
+   ``` 
+   $ ./FanduelProgram
+   ```
+   The program will ask you for a month, day, and year in order.
+  ```  
+   Enter month: 02
+   Enter day: 28 
+   Enter year: 2015 
+  ``` 
+  ** NOTE: Example Date is given above **
+  Inputting the date will bring up the best line up possible on that day.  
+  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
+  **The program will only work if the user inputs numbers for the date.**   
+  **Inputting "feb" for the month will not output the correct data.**  
+  __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is     June 22, 2021 (06,22,2021).__
+ 
+  ## Testing
+  How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
