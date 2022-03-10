@@ -88,9 +88,10 @@ We are using a composite pattern for implementing out Team, Player, and position
  >  Enter year: ex 2015 
  > ``` 
  >  Inputting the date will bring up the best line up possible on that day.  
- >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.
- > **The program will only work if the user inputs numbers for the date. Inputting "feb" for the month will not output the correct data.**  
- > __Due to the website used in the webscrapper, the date of the last game that will find the best line up is June 22, 2021 (06,22,2021).__
+ >  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
+ > **The program will only work if the user inputs numbers for the date.**   
+ > **Inputting "feb" for the month will not output the correct data.**  
+ > __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is June 22, 2021 (06,22,2021).__
  >
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
