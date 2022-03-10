@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iomanip>
 #include "PointGuard.h"
 #include "ShootingGuard.h"
 #include "PowerForward.h"
@@ -210,12 +210,14 @@ class Team
 		int overallValue = 0.0; 
 		double totalPoints = 0.0;
     		int teamSalary = 60000 - salaryCap;
-		std::cout << "Ps Name         Pts  Cost  Value"<<std::endl;  
+		std::cout << left <<  setw(10) << "Ps" << setw(30) << "Name" << setw(20) << "Pts" << setw(10) << "Cost($)" << setw(8) << "Value" << std::endl; 
 		for(int i = 0; i < bestPlayers.size(); i++){
 		  	Player temp = bestPlayers[i];
         		totalPoints += temp.getPoints();
 			overallValue += temp.calculateValue();
-        		std::cout << temp.getPos() << " " << temp.getName() << " " << temp.getPoints() << " $" << temp.getCost() << " " << temp.calculateValue() << std::endl;
+		std::cout << left << setw(10) << temp.getPos() << setw(30) << temp.getName() << setw(20) << temp.getPoints() << setw(10) << temp.getCost() << setw(8)<< temp.calculateValue()  << std::endl; 
+
+        
     		}
     		std::cout << std::endl <<  std::endl << "Total Points: " << totalPoints << "     Team Salary: $" << teamSalary << "    Overall Value: " << overallValue << std::endl;	
 	}	
