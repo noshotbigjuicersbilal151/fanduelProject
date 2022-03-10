@@ -21,7 +21,7 @@ Now, again, we cannot accurately predict the future. That said, we can use past 
   ## Phase II
 
 ## Class Diagram
- The overarching class is the Team class which will hold the total team salary, the total team points, and the date to retrieve a team from. Player will inherit from team, with each player having it's individual statistics and cost to the team salary. Each player has a specific position. The position doesn't matter much except that certain players can only fill out certain positions and there has to be 2 players of each position, except Center which only needs 1.
+ The client calls on csvReader(), which in turn calls on webscraper.py which webscrapes [this website](http://rotoguru1.com/cgi-bin/hyday.pl?game=fd&mon=2&day=22&year=2021&scsv=) (date values changeable based on input) and generates a .csv file with a list of players and their information from that day. csvReader() then parses the .csv file into a 2D vector of strings. Then the client instantiates a Team object. The Team class houses vectors to hold Players in their different forms, as well as various methods to manipulate the vectors of players to find the best possible lineup. The client calls these methods in a specific order to get the best lineup. The Player class is separate from Team, and represents each individual player. Each Player has variables to hold their cost, points scored, name, position, value, and a position value (for sorting purposes). The Player class has getters for each variable except value, in which it has a method to calculateValue() instead. The five position classes (PointGuard, ShootingGuard, PowerForward, SmallForward, Center) all inherit from PLayer and simply define their position strings and values appropriately.
  
  ## Phase III
 
