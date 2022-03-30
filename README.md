@@ -1,5 +1,5 @@
 
-# Daily Fantasy Best Possible Lineup
+# Fanduel NBA Best Possible Lineup
  > 
  
   Authors: [Jordan Kuschner](https://github.com/marinersjk00),  [Chris Chua](https://github.com/cchua00) , [Andrew Ocegueda](https://github.com/xTh3Unkn0wnx), [Bilal Nasir](https://github.com/noshotbigjuicersbilal151)
@@ -21,24 +21,87 @@ Now, again, we cannot accurately predict the future. That said, we can use past 
   ## Phase II
 
 ## Class Diagram
- The overarching class is the Team class which will hold the total team salary, the total team points, and the date to retrieve a team from. Player will inherit from team, with each player having it's individual statistics and cost to the team salary. Each player has a specific position. The position doesn't matter much except that certain players can only fill out certain positions and there has to be 2 players of each position, except Center which only needs 1.
+![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/UML%20Diagram.png)
+ The client calls on csvReader(), which in turn calls on webscraper.py which webscrapes [this website](http://rotoguru1.com/cgi-bin/hyday.pl?game=fd&mon=2&day=22&year=2021&scsv=) (date values changeable based on input) and generates a .csv file with a list of players and their information from that day. csvReader() then parses the .csv file into a 2D vector of strings. Then the client instantiates a Team object. The Team class houses vectors to hold Players in their different forms, as well as various methods to manipulate the vectors of players to find the best possible lineup. The client calls these methods in a specific order to get the best lineup. The Player class is separate from Team, and represents each individual player. Each Player has variables to hold their cost, points scored, name, position, value, and a position value (for sorting purposes). The Player class has getters for each variable except value, in which it has a method to calculateValue() instead. The five position classes (PointGuard, ShootingGuard, PowerForward, SmallForward, Center) all inherit from PLayer and simply define their position strings and values appropriately.
  
  ## Phase III
-
-We are using a composite pattern for implementing out Team, Player, and position classes. This is because our inheritance is relatively simple. All of our subclasses are really just smaller instances of their parents. For example, Team is a collection of Players, and every position player is still a player on a team. We don't have many complicated strategies or decisions involved in this portion so we are ok with using a composite design pattern. For our comparison between players, however, we may need to use a strategy pattern instead. As we get into comparing players to see who goes on our best teams, we could run into a multitue of iffy situations such as comparing maximum points vs points per dollar, or considering a tie in points or if a more valueable position is filled. We will also need to consider additonal factors like if our team isfull at a certain position or if a more valueable player exists that we cannot afford. Overall, there are many complications that could occur as a result of comparing between players, so a strategy pattern would be best. The comparisons haven't been implemented yet, but following the composite design pattern has allowed us to stay focued on the specific tasks we are working on. It is easy to think of new ideas while writing the code, but following the design pattern has forced us to keep things simple for this portion and save the more advanced stuff for the strategy side.
+We ultimately used the Singleton design pattern. We decided to do this because all of our work to figure out the best lineup after webscraping the player data was just manipulating groupings of players in different ways. As such, it seemed appropriate to have a Team class that housed all the methods. Likewise, we were able to create only one instance of a Team object and use its methods to produce the best possible lineup. Following the Singleton design pattern made our code much more readable and easier to debug. Rather than having everything written in main and scrolling through large files, we were able to work on each individual method one by one in Team and pinpointing the errors was much easier. 
 
  
- > ## Final deliverable
- > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
- ## Installation/Usage
- > Instructions on installing and running your application
- ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/7817f44d513d62728e6639029c085bd51b58ed6a/output1.png)
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output2.png)
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output3.png)  
+ ![image](https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003/blob/a7e4bae0d7e328749fb3792b512f8fae37c6bc58/output4.png)
+ ## Installation/Usage 
+ In order to install the program first make sure you are in the your home directory by using the following command:
+   ```
+   $ cd ~ 
+   ```
+   Then clone the repository by using the git clone command followed by the URL repository link:
+   ```
+   $ git clone https://github.com/cs100/final-project-jkusc002-bnasi004-cchua032-aoce003.git
+   ```
+   Change the directory from home to the repository with the following: 
+   ``` 
+   $ cd final-project0jkusc002-bnasi004-cchua032-aoce003/ 
+   ```
+   After cloning the repository, run the following command in order to install the extensions for the requests, pandas, and beautiful soup extensions for python 3 and higher use: 
+   ```
+   $ python3 -m pip3 install --user requests
+   $ python3 -m pip3 install --user pandas
+   $ python3 -m pip3 install --user bs4
+   ```
+   for python 2.7 and below use:
+   ``` 
+   $ python3 -m pip install --user requests
+   $ python3 -m pip install --user pandas
+   $ python3 -m pip install --user bs4
+   ```
+  After all of these have successfully been installed, the program will be able to run.   
+  In order to run the program, first compile main.cpp with following command:   
+  ```
+   $ g++ -o FanduelProgram main.cpp 
+   ```
+    
+  Then run the executable using the following command: 
+   ``` 
+   $ ./FanduelProgram
+   ```
+   The program will ask you for a month, day, and year in order.
+  ```  
+   Enter month: 02
+   Enter day: 28 
+   Enter year: 2015 
+  ``` 
+  **NOTE: Example Date is given above**
+  
+  Inputting the date will bring up the best line up possible on that day.  
+  Inputting the date as 04/13/2016 or 4/13/2016 will find the same best line up.  
+  
+  **The program will only work if the user inputs numbers for the date.**   
+  **Inputting "feb" for the month will not output the correct data.**  
+  
+  __Due to the website used in the webscrapper, the date of the earliest game that can find the best line up is October 28, 2014 (10,28,2014) and the date of the last game is     June 22, 2021 (06,22,2021).__
+ 
+  ## Testing
+  For testing we adopted the google test framework. We ran unit tests on all of our functions including our webscraper. We created the file CMakeLists.txt to generate an executable for the unit tests under a file called unit_test. This will pull the unit tests from unit_test.cpp. 
+  We basically created two test suites, one that uses a fixed csv file that is generated at the beginning of the tests, and one that tests our webscraper. 
+  
+  ## Fixed CSV Test Suite
+  In this test suite we test our algorithm that creates the best line up to ensure functionality. This consists of multiple functions including: 
+  ```
+   getPositions()
+   valueSorter()
+   bestByValue()
+   sortByPointsScored()
+   spendRemainingCapOnPoints()
+   sortByPosition()
+  ``` 
+  This test suite is reliant on asking the tester to give the python webscraper a certain date. We know which values to expect for each function so we simply pass the test if the values match up. We ensure this works because if we enter a different date, all of our tests fail. 
+  
+  ## Webscraper Test Suite
+  Testing the webscraper proved to be quite difficult. Our webscraper is implemented in python and its primary use is to give us a csv file to read. Since googletest framework is used for c++ we had to get creative on how to test it. Our solution was to test that it would indeed create the csv file needed. We simply remove the existing csv file, call our webscraper, and check if a new file is created. We also test if the date that was input is valid. We do this by checking the contets of the csv file, if it's empty itll fail and if its full it'll pass.
+
  
